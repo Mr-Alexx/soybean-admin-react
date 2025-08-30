@@ -5,7 +5,7 @@ import transformerDirectives from '@unocss/transformer-directives';
 import transformerVariantGroup from '@unocss/transformer-variant-group';
 import { defineConfig } from '@unocss/vite';
 
-import { themeVars } from './src/theme/vars';
+import { themeVars } from './src/theme/vars.ts';
 
 export default defineConfig<Theme>({
   content: {
