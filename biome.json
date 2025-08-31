@@ -1,0 +1,112 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.2.2/schema.json",
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
+  "files": {
+    "ignoreUnknown": false
+  },
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": "on",
+        "useSortedProperties": "on",
+        "useSortedAttributes": "off"
+      }
+    }
+  },
+  "formatter": {
+    "enabled": true,
+    "formatWithErrors": false,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineEnding": "lf",
+    "lineWidth": 120,
+    "attributePosition": "auto"
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "a11y": {
+        "recommended": true
+      },
+      "complexity": {
+        "recommended": true
+      },
+      "correctness": {
+        "recommended": true,
+        "noUnusedImports": "on",
+        "noUnusedVariables": "on"
+      },
+      "performance": {
+        "recommended": true
+      },
+      "security": {
+        "recommended": true
+      },
+      "style": {
+        "recommended": true,
+        "useImportType": "on",
+        "useSelfClosingElements": "error"
+      },
+      "suspicious": {
+        "recommended": true,
+        "noArrayIndexKey": "warn",
+        "noExplicitAny": "warn"
+      }
+    }
+  },
+  "javascript": {
+    "formatter": {
+      "trailingCommas": "none",
+      "jsxQuoteStyle": "double",
+      "quoteProperties": "asNeeded",
+      "semicolons": "always",
+      "arrowParentheses": "asNeeded",
+      "bracketSpacing": true,
+      "bracketSameLine": false,
+      "quoteStyle": "single",
+      "attributePosition": "multiline"
+    }
+  },
+  "json": {
+    "formatter": {
+      "enabled": true,
+      "indentStyle": "space",
+      "indentWidth": 2,
+      "lineEnding": "lf",
+      "lineWidth": 120
+    }
+  },
+  "css": {
+    "formatter": {
+      "enabled": true,
+      "indentStyle": "space",
+      "indentWidth": 2,
+      "lineEnding": "lf",
+      "lineWidth": 120,
+      "quoteStyle": "double"
+    }
+  },
+  "overrides": [
+    {
+      "includes": [
+        "*.tsx",
+        "*.jsx"
+      ],
+      "linter": {
+        "rules": {
+          "style": {
+            "useImportType": "on"
+          },
+          "correctness": {
+            "useExhaustiveDependencies": "warn"
+          }
+        }
+      }
+    }
+  ]
+}

@@ -122,10 +122,13 @@
   },
   "simple-git-hooks": {
     "commit-msg": "pnpm sa git-commit-verify",
-    "pre-commit": "pnpm typecheck && pnpm lint-staged"
+    "pre-commit": "pnpm lint-staged"
   },
   "lint-staged": {
-    "*": "biome check --write --no-errors-on-unmatched"
+    "*.{js,jsx,ts,tsx}": [
+      "biome check --write --no-errors-on-unmatched",
+      "tsc --noEmit --skipLibCheck"
+    ]
   },
   "website": "https://react.soybeanjs.cn/home/"
 }
