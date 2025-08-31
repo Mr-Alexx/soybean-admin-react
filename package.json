@@ -42,7 +42,9 @@
     "dev": "vite --mode test",
     "dev:prod": "vite --mode prod",
     "gen-route": "sa gen-route",
-    "lint": "eslint . --fix",
+    "lint": "biome check --write .",
+    "lint:check": "biome check .",
+    "format": "biome format --write .",
     "prepare": "simple-git-hooks",
     "preview": "vite preview",
     "release": "sa release",
@@ -79,6 +81,7 @@
     "react-router-dom": "7.2.0"
   },
   "devDependencies": {
+    "@biomejs/biome": "^2.2.2",
     "@iconify/json": "2.2.309",
     "@iconify/types": "2.0.0",
     "@sa/scripts": "workspace:*",
@@ -94,9 +97,6 @@
     "@types/react": "19.0.10",
     "@types/react-dom": "19.0.4",
     "@types/react-transition-group": "4.4.12",
-    "@typescript-eslint/eslint-plugin": "8.24.1",
-    "@typescript-eslint/parser": "8.24.1",
-    "@unocss/eslint-config": "66.0.0",
     "@unocss/preset-icons": "66.0.0",
     "@unocss/preset-uno": "66.0.0",
     "@unocss/transformer-directives": "66.0.0",
@@ -104,17 +104,13 @@
     "@unocss/vite": "66.0.0",
     "boxen": "8.0.1",
     "consola": "3.4.0",
-    "eslint": "9.21.0",
-    "eslint-plugin-react": "7.37.4",
-    "eslint-plugin-react-hooks": "5.1.0",
-    "eslint-plugin-react-refresh": "0.4.19",
-    "eslint-plugin-sort": "4.0.0",
     "gradient-string": "3.0.0",
     "json5": "2.2.3",
     "kolorist": "1.8.0",
     "lint-staged": "15.4.3",
     "sass": "1.85.0",
     "simple-git-hooks": "2.11.1",
+    "ts-node": "^10.9.2",
     "tsx": "4.19.3",
     "typescript": "5.7.3",
     "unplugin-auto-import": "19.1.0",
@@ -129,7 +125,7 @@
     "pre-commit": "pnpm typecheck && pnpm lint-staged"
   },
   "lint-staged": {
-    "*": "eslint --fix"
+    "*": "biome check --write --no-errors-on-unmatched"
   },
   "website": "https://react.soybeanjs.cn/home/"
 }
