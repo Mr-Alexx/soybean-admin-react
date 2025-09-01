@@ -1,11 +1,10 @@
 // @unocss-include
 
-import type { Preset } from '@unocss/core';
-import type { Theme } from '@unocss/preset-uno';
+import type { Preset } from 'unocss';
 
-export function presetSoybeanAdmin(): Preset<Theme> {
-  const preset: Preset<Theme> = {
-    name: 'preset-soybean-admin',
+export function presetAdmin(): Preset {
+  return {
+    name: 'preset-admin',
     shortcuts: [
       {
         'flex-1-hidden': 'flex-1 overflow-hidden',
@@ -48,8 +47,6 @@ export function presetSoybeanAdmin(): Preset<Theme> {
       }
     ]
   };
-
-  return preset;
 }
 
-export default presetSoybeanAdmin;
+export default presetAdmin;

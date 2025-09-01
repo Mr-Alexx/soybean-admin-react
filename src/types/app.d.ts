@@ -148,7 +148,7 @@ declare namespace App {
     }
 
     interface ThemeSettingToken {
-      boxShadow: ThemeSettingTokenBoxShadow;
+      shadow: ThemeSettingTokenBoxShadow;
       colors: ThemeSettingTokenColor;
     }
 
@@ -156,7 +156,7 @@ declare namespace App {
 
     /** Theme token CSS variables */
     type ThemeTokenCSSVars = {
-      boxShadow: ThemeSettingTokenBoxShadow & { [key: string]: string };
+      shadow: ThemeSettingTokenBoxShadow & { [key: string]: string };
       colors: ThemeTokenColor & { [key: string]: string };
     };
   }
@@ -660,7 +660,10 @@ declare namespace App {
             height: string;
           };
           isOnlyExpandCurrentParentMenu: string;
-          layoutMode: { reverseHorizontalMix: string; title: string } & Record<UnionKey.ThemeLayoutMode, string>;
+          layoutMode: { reverseHorizontalMix: string; title: string } & Record<
+            UnionKey.ThemeLayoutMode,
+            string
+          >;
           page: {
             animate: string;
             mode: { title: string } & Record<UnionKey.ThemePageAnimateMode, string>;
@@ -697,7 +700,10 @@ declare namespace App {
       };
     };
 
-    type GetI18nKey<T extends Record<string, unknown>, K extends keyof T = keyof T> = K extends string
+    type GetI18nKey<
+      T extends Record<string, unknown>,
+      K extends keyof T = keyof T
+    > = K extends string
       ? T[K] extends Record<string, unknown>
         ? `${K}.${GetI18nKey<T[K]>}`
         : K
@@ -705,7 +711,8 @@ declare namespace App {
 
     type I18nKey = GetI18nKey<Schema['translation']>;
 
-    type TranslateOptions<Locales extends string> = import('react-i18next').TranslationProps<Locales>;
+    type TranslateOptions<Locales extends string> =
+      import('react-i18next').TranslationProps<Locales>;
 
     interface $T {
       (key: I18nKey): string;

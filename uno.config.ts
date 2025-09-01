@@ -1,19 +1,19 @@
-import { presetSoybeanAdmin } from '@sa/uno-preset';
-import presetUno from '@unocss/preset-uno';
-import type { Theme } from '@unocss/preset-uno';
-import transformerDirectives from '@unocss/transformer-directives';
-import transformerVariantGroup from '@unocss/transformer-variant-group';
-import { defineConfig } from '@unocss/vite';
+import { presetAdmin } from '@sa/uno-preset';
+import { defineConfig, presetWind4, transformerDirectives, transformerVariantGroup } from 'unocss';
+import { themeVars } from './src/theme/vars';
 
-import { themeVars } from './src/theme/vars.ts';
-
-export default defineConfig<Theme>({
+export default defineConfig({
   content: {
     pipeline: {
       exclude: ['node_modules', 'dist']
     }
   },
-  presets: [presetUno({ dark: 'class' }), presetSoybeanAdmin()],
+  presets: [
+    presetWind4({
+      dark: 'class'
+    }),
+    presetAdmin()
+  ],
   rules: [
     [
       /^h-calc\((.*)\)$/, // 匹配 h-clac(xxx) 的正则表达式
@@ -25,7 +25,7 @@ export default defineConfig<Theme>({
   },
   theme: {
     ...themeVars,
-    fontSize: {
+    text: {
       icon: '1.125rem',
       'icon-large': '1.5rem',
       'icon-small': '1rem',

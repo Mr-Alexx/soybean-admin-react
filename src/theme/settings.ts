@@ -14,14 +14,14 @@ export const themeSettings: App.Theme.ThemeSetting = {
       showIcon: true,
       visible: true
     },
-    height: 56
+    height: 50
   },
   isInfoFollowPrimary: true,
   isOnlyExpandCurrentParentMenu: true,
   layout: {
     mode: 'vertical',
     reverseHorizontalMix: false,
-    scrollMode: 'content'
+    scrollMode: 'wrapper'
   },
   otherColor: {
     error: '#f5222d',
@@ -31,7 +31,7 @@ export const themeSettings: App.Theme.ThemeSetting = {
   },
   page: {
     animate: true,
-    animateMode: 'fade'
+    animateMode: 'fade-slide'
   },
   recommendColor: false,
   sider: {
@@ -44,7 +44,7 @@ export const themeSettings: App.Theme.ThemeSetting = {
   },
   tab: {
     cache: true,
-    height: 44,
+    height: 40,
     mode: 'chrome',
     visible: true
   },
@@ -59,7 +59,7 @@ export const themeSettings: App.Theme.ThemeSetting = {
       }
     },
     light: {
-      boxShadow: {
+      shadow: {
         header: '0 1px 2px rgb(0, 21, 41, 0.08)',
         sider: '2px 0 8px 0 rgb(29, 35, 41, 0.05)',
         tab: '0 1px 2px rgb(0, 21, 41, 0.08)'
@@ -73,7 +73,7 @@ export const themeSettings: App.Theme.ThemeSetting = {
     }
   },
   watermark: {
-    text: 'SoybeanAdmin',
+    text: 'VendureAdmin',
     visible: false
   }
 };
