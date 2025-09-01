@@ -1,22 +1,22 @@
 {
-  "name": "soybean-admin-react",
+  "name": "vendure-admin",
   "type": "module",
-  "version": "2.1.0",
+  "version": "1.0.0",
   "private": false,
   "packageManager": "pnpm@10.4.1",
-  "description": "A fresh and elegant admin template, based on React18、Vite5、TypeScript、Ant Design and UnoCSS. 一个基于React18、Vite5、TypeScript、Ant Design and UnoCSS的清新优雅的中后台模版。",
+  "description": "Vendure admin, based on React18、Vite5、TypeScript、Ant Design and UnoCSS.",
   "author": {
-    "name": "Ohh",
-    "email": "1509326266@qq.com",
-    "url": "https://github.com/mufeng889"
+    "name": "Qian",
+    "email": "719876205@qq.com",
+    "url": "https://github.com/Mr-Alexx"
   },
   "license": "MIT",
-  "homepage": "https://github.com/soybeanjs/soybean-admin-react",
+  "homepage": "https://github.com/Mr-Alexx/soybean-admin-react",
   "repository": {
-    "url": "https://github.com/soybeanjs/soybean-admin-react.git"
+    "url": "https://github.com/Mr-Alexx/soybean-admin-react.git"
   },
   "bugs": {
-    "url": "https://github.com/soybeanjs/soybean-admin-react/issues"
+    "url": "https://github.com/Mr-Alexx/soybean-admin-react/issues"
   },
   "keywords": [
     "React admin",
@@ -123,6 +123,5 @@
     "*.{js,jsx,ts,tsx}": [
       "biome check --write --no-errors-on-unmatched"
     ]
-  },
-  "website": "https://react.soybeanjs.cn/home/"
+  }
 }
