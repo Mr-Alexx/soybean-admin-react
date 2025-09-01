@@ -26,11 +26,21 @@ export default defineConfig({
   theme: {
     ...themeVars,
     text: {
-      icon: '1.125rem',
-      'icon-large': '1.5rem',
-      'icon-small': '1rem',
-      'icon-xl': '2rem',
-      'icon-xs': '0.875rem'
+      icon: {
+        fontSize: '1.125rem'
+      },
+      'icon-xs': {
+        fontSize: '0.875rem'
+      },
+      'icon-small': {
+        fontSize: '1rem'
+      },
+      'icon-large': {
+        fontSize: '1.5rem'
+      },
+      'icon-xl': {
+        fontSize: '2rem'
+      }
     }
   },
   transformers: [transformerDirectives(), transformerVariantGroup()]
