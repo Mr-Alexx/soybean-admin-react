@@ -23,8 +23,8 @@
     "indentStyle": "space",
     "indentWidth": 2,
     "lineEnding": "lf",
-    "lineWidth": 120,
-    "attributePosition": "auto"
+    "lineWidth": 100,
+    "attributePosition": "multiline"
   },
   "linter": {
     "enabled": true,
@@ -69,7 +69,9 @@
       "bracketSpacing": true,
       "bracketSameLine": false,
       "quoteStyle": "single",
-      "attributePosition": "multiline"
+      "attributePosition": "multiline",
+      "lineWidth": 100,
+      "indentWidth": 2
     }
   },
   "json": {
@@ -78,7 +80,7 @@
       "indentStyle": "space",
       "indentWidth": 2,
       "lineEnding": "lf",
-      "lineWidth": 120
+      "lineWidth": 100
     }
   },
   "css": {
@@ -87,7 +89,7 @@
       "indentStyle": "space",
       "indentWidth": 2,
       "lineEnding": "lf",
-      "lineWidth": 120,
+      "lineWidth": 100,
       "quoteStyle": "double"
     }
   },
