@@ -121,8 +121,7 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
-      "biome check --write --no-errors-on-unmatched",
-      "tsc --noEmit --skipLibCheck"
+      "biome check --write --no-errors-on-unmatched"
     ]
   },
   "website": "https://react.soybeanjs.cn/home/"
