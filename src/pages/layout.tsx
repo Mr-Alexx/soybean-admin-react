@@ -1,6 +1,6 @@
 import type { RoutePath } from '@soybean-react/vite-plugin-react-router';
-import { Outlet, matchRoutes } from 'react-router-dom';
 import type { ShouldRevalidateFunctionArgs } from 'react-router-dom';
+import { matchRoutes, Outlet } from 'react-router-dom';
 
 import { isStaticSuper, selectUserInfo } from '@/features/auth/authStore';
 import { usePrevious, useRoute } from '@/features/router';
@@ -19,7 +19,12 @@ function handleRouteSwitch(to: Router.Route, from: Router.Route | null) {
 }
 
 // eslint-disable-next-line max-params
-function createRouteGuard(to: Router.Route, roles: string[], isSuper: boolean, previousRoute: Router.Route | null) {
+function createRouteGuard(
+  to: Router.Route,
+  roles: string[],
+  isSuper: boolean,
+  previousRoute: Router.Route | null
+) {
   const loginRoute: RoutePath = '/login';
   const isLogin = Boolean(localStg.get('token'));
 

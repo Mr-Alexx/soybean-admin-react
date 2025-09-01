@@ -136,8 +136,8 @@ function createThemeToken(
   const { dark, light } = tokens || themeSettings.tokens;
 
   const themeTokens: App.Theme.ThemeTokenCSSVars = {
-    boxShadow: {
-      ...light.boxShadow
+    shadow: {
+      ...light.shadow
     },
     colors: {
       ...paletteColors,
@@ -147,9 +147,9 @@ function createThemeToken(
   };
 
   const darkThemeTokens: App.Theme.ThemeTokenCSSVars = {
-    boxShadow: {
-      ...themeTokens.boxShadow,
-      ...dark?.boxShadow
+    shadow: {
+      ...themeTokens.shadow,
+      ...dark?.shadow
     },
     colors: {
       ...themeTokens.colors,
@@ -178,8 +178,14 @@ export function getAntdTheme(
 
   const { error, info, primary, success, warning } = colors;
 
-  const bgColor = transformColorWithOpacity(primary, darkMode ? 0.3 : 0.1, darkMode ? '#000000' : '#fff');
-  const containerBgColor = darkMode ? tokens.dark?.colors?.container : tokens.light?.colors.container;
+  const bgColor = transformColorWithOpacity(
+    primary,
+    darkMode ? 0.3 : 0.1,
+    darkMode ? '#000000' : '#fff'
+  );
+  const containerBgColor = darkMode
+    ? tokens.dark?.colors?.container
+    : tokens.light?.colors.container;
 
   const theme: ConfigProviderProps['theme'] = {
     algorithm: [darkMode ? darkAlgorithm : defaultAlgorithm],

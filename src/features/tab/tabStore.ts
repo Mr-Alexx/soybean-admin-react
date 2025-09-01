@@ -1,5 +1,5 @@
-import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 import type { RoutePath } from '@soybean-react/vite-plugin-react-router';
 
 interface InitialStateType {
@@ -63,7 +63,13 @@ export const tabSlice = createSlice({
   }
 });
 
-export const { addTab, changeTabLabel, setActiveFirstLevelMenuKey, setActiveTabId, setTabs, updateTab } =
-  tabSlice.actions;
+export const {
+  addTab,
+  changeTabLabel,
+  setActiveFirstLevelMenuKey,
+  setActiveTabId,
+  setTabs,
+  updateTab
+} = tabSlice.actions;
 
 export const { selectActiveFirstLevelMenuKey, selectActiveTabId, selectTabs } = tabSlice.selectors;

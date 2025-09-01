@@ -5,7 +5,7 @@ import { cloneElement } from 'react';
 
 import { MenuToggler, useMixMenuContext } from '@/features/menu';
 import { useRouter } from '@/features/router';
-import { ThemeContext, getThemeSettings } from '@/features/theme';
+import { getThemeSettings, ThemeContext } from '@/features/theme';
 import { getSiderCollapse } from '@/layouts/appStore';
 
 interface Props {
@@ -71,7 +71,10 @@ function MixMenuItem(Props: MixMenuItemProps) {
       )}
       onClick={handleSelectMixMenu}
     >
-      {icon && cloneElement(icon, { className: siderCollapse ? 'text-icon-small' : 'text-icon-large' } as any)}
+      {icon &&
+        cloneElement(icon, {
+          className: siderCollapse ? 'text-icon-small' : 'text-icon-large'
+        } as any)}
 
       <p
         className={clsx(

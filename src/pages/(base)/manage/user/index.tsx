@@ -1,4 +1,4 @@
-import { Suspense, lazy } from 'react';
+import { lazy, Suspense } from 'react';
 
 import { enableStatusRecord, userGenderRecord } from '@/constants/business';
 import { ATG_MAP } from '@/constants/common';
@@ -144,16 +144,23 @@ const UserManage = () => {
     { showQuickJumper: true }
   );
 
-  const { checkedRowKeys, generalPopupOperation, handleAdd, handleEdit, onBatchDeleted, onDeleted, rowSelection } =
-    useTableOperate(data, run, async (res, type) => {
-      if (type === 'add') {
-        // add request 调用新增的接口
-        console.log(res);
-      } else {
-        // edit request 调用编辑的接口
-        console.log(res);
-      }
-    });
+  const {
+    checkedRowKeys,
+    generalPopupOperation,
+    handleAdd,
+    handleEdit,
+    onBatchDeleted,
+    onDeleted,
+    rowSelection
+  } = useTableOperate(data, run, async (res, type) => {
+    if (type === 'add') {
+      // add request 调用新增的接口
+      console.log(res);
+    } else {
+      // edit request 调用编辑的接口
+      console.log(res);
+    }
+  });
 
   async function handleBatchDelete() {
     // request

@@ -1,6 +1,5 @@
-export * from './router';
-
 export * from './RouterProvider';
+export * from './router';
 
 export * from './useRoute';
 

@@ -3,7 +3,7 @@ import type { CSSProperties } from 'react';
 
 import ButtonIcon from '@/components/ButtonIcon';
 
-import { ThemeContext, icons } from './themeContext';
+import { icons, ThemeContext } from './themeContext';
 
 interface Props {
   className?: string;
@@ -17,54 +17,59 @@ interface Props {
 const DEFAULT_ANIMATION_DURATION = 400;
 const DEFAULT_ANIMATION_EASING = 'ease-out';
 
-const ThemeSchemaSwitch: FC<Props> = memo(({ showTooltip = true, tooltipPlacement = 'bottom', ...props }) => {
-  const { t } = useTranslation();
+const ThemeSchemaSwitch: FC<Props> = memo(
+  ({ showTooltip = true, tooltipPlacement = 'bottom', ...props }) => {
+    const { t } = useTranslation();
 
-  const { darkMode, themeScheme, toggleThemeScheme } = useContext(ThemeContext);
+    const { darkMode, themeScheme, toggleThemeScheme } = useContext(ThemeContext);
 
-  const tooltipContent = showTooltip ? t('icon.themeSchema') : '';
+    const tooltipContent = showTooltip ? t('icon.themeSchema') : '';
 
-  const toggleDark: ButtonProps['onClick'] = event => {
-    const isAppearanceTransition = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const toggleDark: ButtonProps['onClick'] = event => {
+      const isAppearanceTransition = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    if (!isAppearanceTransition) {
-      toggleThemeScheme();
-      return;
-    }
+      if (!isAppearanceTransition) {
+        toggleThemeScheme();
+        return;
+      }
 
-    const transition = document.startViewTransition(() => {
-      toggleThemeScheme();
-    });
+      const transition = document.startViewTransition(() => {
+        toggleThemeScheme();
+      });
 
-    if (themeScheme === 'system') return;
+      if (themeScheme === 'system') return;
 
-    const x = event.clientX;
-    const y = event.clientY;
-    const endRadius = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y));
+      const x = event.clientX;
+      const y = event.clientY;
+      const endRadius = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y));
 
-    transition.ready.then(() => {
-      const clipPath = [`circle(0px at ${x}px ${y}px)`, `circle(${endRadius}px at ${x}px ${y}px)`];
-      document.documentElement.animate(
-        {
-          clipPath: darkMode ? [...clipPath].reverse() : clipPath
-        },
-        {
-          duration: DEFAULT_ANIMATION_DURATION,
-          easing: DEFAULT_ANIMATION_EASING,
-          pseudoElement: darkMode ? '::view-transition-old(root)' : '::view-transition-new(root)'
-        }
-      );
-    });
-  };
-  return (
-    <ButtonIcon
-      icon={icons[themeScheme]}
-      tooltipContent={tooltipContent}
-      {...props}
-      tooltipPlacement={tooltipPlacement}
-      onClick={toggleDark}
-    />
-  );
-});
+      transition.ready.then(() => {
+        const clipPath = [
+          `circle(0px at ${x}px ${y}px)`,
+          `circle(${endRadius}px at ${x}px ${y}px)`
+        ];
+        document.documentElement.animate(
+          {
+            clipPath: darkMode ? [...clipPath].reverse() : clipPath
+          },
+          {
+            duration: DEFAULT_ANIMATION_DURATION,
+            easing: DEFAULT_ANIMATION_EASING,
+            pseudoElement: darkMode ? '::view-transition-old(root)' : '::view-transition-new(root)'
+          }
+        );
+      });
+    };
+    return (
+      <ButtonIcon
+        icon={icons[themeScheme]}
+        tooltipContent={tooltipContent}
+        {...props}
+        tooltipPlacement={tooltipPlacement}
+        onClick={toggleDark}
+      />
+    );
+  }
+);
 
 export default ThemeSchemaSwitch;

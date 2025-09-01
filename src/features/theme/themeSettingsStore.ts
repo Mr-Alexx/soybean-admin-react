@@ -1,5 +1,5 @@
-import { createSelector, createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
+import { createSelector, createSlice } from '@reduxjs/toolkit';
 import { getPaletteColorByNumber } from '@sa/color';
 
 import { globalConfig } from '@/config';
@@ -146,14 +146,17 @@ export const {
 } = themeSlice.actions;
 
 // 计算属性选择器
-export const themeColors = createSelector([getThemeSettings], ({ isInfoFollowPrimary, otherColor, themeColor }) => {
-  const colors: App.Theme.ThemeColor = {
-    primary: themeColor,
-    ...otherColor,
-    info: isInfoFollowPrimary ? themeColor : otherColor.info
-  };
-  return colors;
-});
+export const themeColors = createSelector(
+  [getThemeSettings],
+  ({ isInfoFollowPrimary, otherColor, themeColor }) => {
+    const colors: App.Theme.ThemeColor = {
+      primary: themeColor,
+      ...otherColor,
+      info: isInfoFollowPrimary ? themeColor : otherColor.info
+    };
+    return colors;
+  }
+);
 
 export const settingsJson = createSelector([getThemeSettings], settings => {
   return JSON.stringify(settings);

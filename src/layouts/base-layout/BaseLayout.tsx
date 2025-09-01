@@ -1,5 +1,5 @@
-import { AdminLayout, LAYOUT_SCROLL_EL_ID } from '@sa/materials';
 import type { LayoutMode } from '@sa/materials';
+import { AdminLayout, LAYOUT_SCROLL_EL_ID } from '@sa/materials';
 import { configResponsive } from 'ahooks';
 import { Suspense } from 'react';
 
@@ -14,7 +14,13 @@ import { useMixMenuContext } from '@/features/menu';
 import GlobalTab from '@/features/tab/GlobalTab';
 import { getThemeSettings, setLayoutMode } from '@/features/theme';
 
-import { getFullContent, getMixSiderFixed, getSiderCollapse, setIsMobile, setSiderCollapse } from '../appStore';
+import {
+  getFullContent,
+  getMixSiderFixed,
+  getSiderCollapse,
+  setIsMobile,
+  setSiderCollapse
+} from '../appStore';
 import GlobalContent from '../modules/GlobalContent';
 import GlobalFooter from '../modules/GlobalFooter';
 import GlobalSider from '../modules/GlobalSider';

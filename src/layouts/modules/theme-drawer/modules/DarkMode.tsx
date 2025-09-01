@@ -1,11 +1,11 @@
 import { Switch } from 'antd';
 
 import {
-  ThemeSchemaSegmented,
   getThemeSettings,
   setColourWeakness,
   setGrayscale,
-  setIsOnlyExpandCurrentParentMenu
+  setIsOnlyExpandCurrentParentMenu,
+  ThemeSchemaSegmented
 } from '@/features/theme';
 
 import SettingItem from '../components/SettingItem';

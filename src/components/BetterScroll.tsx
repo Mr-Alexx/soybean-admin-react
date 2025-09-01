@@ -1,8 +1,8 @@
 import type { Options } from '@better-scroll/core';
 import BScroll from '@better-scroll/core';
 import ClassNames from 'classnames';
+import type React from 'react';
 import type { FC } from 'react';
-import React from 'react';
 
 interface Props extends React.ComponentProps<'div'> {
   /**

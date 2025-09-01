@@ -1,9 +1,14 @@
 import type { DragEndEvent } from '@dnd-kit/core';
 import { DndContext } from '@dnd-kit/core';
-import { SortableContext, arrayMove, useSortable, verticalListSortingStrategy } from '@dnd-kit/sortable';
+import {
+  arrayMove,
+  SortableContext,
+  useSortable,
+  verticalListSortingStrategy
+} from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
+import type React from 'react';
 import type { FC } from 'react';
-import React from 'react';
 
 interface Props {
   columns: AntDesign.TableColumnCheck[];

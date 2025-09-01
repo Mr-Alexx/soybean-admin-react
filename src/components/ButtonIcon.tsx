@@ -1,5 +1,5 @@
 import type { ButtonProps, TooltipProps } from 'antd';
-import { type CSSProperties } from 'react';
+import type { CSSProperties } from 'react';
 
 import SvgIcon from './SvgIcon';
 

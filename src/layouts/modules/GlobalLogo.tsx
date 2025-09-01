@@ -1,6 +1,6 @@
 import clsx from 'clsx';
-import { Link } from 'react-router-dom';
 import type { LinkProps } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import SystemLogo from '@/components/SystemLogo';
 

@@ -1,6 +1,6 @@
 import { Tooltip } from 'antd';
 import type { TooltipProps } from 'antd/lib/tooltip';
-import React from 'react';
+import type React from 'react';
 
 type BeyondHidingProps = Omit<TooltipProps, 'open' | 'trigger'> & {
   className?: string;

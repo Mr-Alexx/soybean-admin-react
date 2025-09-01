@@ -5,7 +5,7 @@ import DarkModeContainer from '@/components/DarkModeContainer';
 import PinToggler from '@/components/PinToggler';
 import { GLOBAL_SIDER_MENU_ID } from '@/constants/app';
 import { useMixMenuContext } from '@/features/menu';
-import { ThemeContext, getThemeSettings } from '@/features/theme';
+import { getThemeSettings, ThemeContext } from '@/features/theme';
 import { getMixSiderFixed, toggleMixSiderFixed } from '@/layouts/appStore';
 
 import GlobalLogo from '../../GlobalLogo';
@@ -59,7 +59,9 @@ const VerticalMix = memo(() => {
       </FirstLevelMenu>
       <div
         className="relative h-full transition-width-300"
-        style={{ width: mixSiderFixed && hasMenus ? `${themeSettings.sider.mixChildMenuWidth}px` : '0px' }}
+        style={{
+          width: mixSiderFixed && hasMenus ? `${themeSettings.sider.mixChildMenuWidth}px` : '0px'
+        }}
       >
         <DarkModeContainer
           className="absolute-lt h-full flex-col-stretch nowrap-hidden shadow-sm transition-all-300"

@@ -1,6 +1,7 @@
 import { generatedRoutes } from './elegant/routes';
 import { filterRoutes, getReactRoutes } from './routes';
 import { BaseChildrenRoutes } from './routes/builtin';
+
 /**
  * - 初始化路由
  * - 生成所有路由ex

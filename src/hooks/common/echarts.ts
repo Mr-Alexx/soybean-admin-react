@@ -1,4 +1,3 @@
-import { BarChart, GaugeChart, LineChart, PictorialBarChart, PieChart, RadarChart, ScatterChart } from 'echarts/charts';
 import type {
   BarSeriesOption,
   GaugeSeriesOption,
@@ -9,14 +8,14 @@ import type {
   ScatterSeriesOption
 } from 'echarts/charts';
 import {
-  DatasetComponent,
-  GridComponent,
-  LegendComponent,
-  TitleComponent,
-  ToolboxComponent,
-  TooltipComponent,
-  TransformComponent
-} from 'echarts/components';
+  BarChart,
+  GaugeChart,
+  LineChart,
+  PictorialBarChart,
+  PieChart,
+  RadarChart,
+  ScatterChart
+} from 'echarts/charts';
 import type {
   DatasetComponentOption,
   GridComponentOption,
@@ -25,11 +24,20 @@ import type {
   ToolboxComponentOption,
   TooltipComponentOption
 } from 'echarts/components';
+import {
+  DatasetComponent,
+  GridComponent,
+  LegendComponent,
+  TitleComponent,
+  ToolboxComponent,
+  TooltipComponent,
+  TransformComponent
+} from 'echarts/components';
 import * as echarts from 'echarts/core';
 import { LabelLayout, UniversalTransition } from 'echarts/features';
 import { CanvasRenderer } from 'echarts/renderers';
 
-import { ThemeContext, getThemeSettings } from '@/features/theme';
+import { getThemeSettings, ThemeContext } from '@/features/theme';
 
 export type ECOption = echarts.ComposeOption<
   | BarSeriesOption
@@ -128,7 +136,9 @@ export function useEcharts<T extends ECOption>(optionsFactory: () => T, hooks: C
    *
    * @param callback callback function
    */
-  async function updateOptions(callback: (opts: T, optsFactory: () => T) => ECOption = () => chartOptions.current) {
+  async function updateOptions(
+    callback: (opts: T, optsFactory: () => T) => ECOption = () => chartOptions.current
+  ) {
     if (!isRendered()) return;
 
     const updatedOpts = callback(chartOptions.current, optionsFactory);

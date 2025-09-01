@@ -1,7 +1,7 @@
-import { Button, Popconfirm, Space } from 'antd';
 import type { SpaceProps } from 'antd';
+import { Button, Popconfirm, Space } from 'antd';
 import classNames from 'classnames';
-import React from 'react';
+import type React from 'react';
 import type { FC } from 'react';
 
 import DragContent from './DragContent';
