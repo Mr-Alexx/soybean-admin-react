@@ -82,6 +82,9 @@
     "react-router-dom": "7.8.2"
   },
   "devDependencies": {
+    "@babel/parser": "^7.28.3",
+    "@babel/traverse": "^7.28.3",
+    "@babel/types": "^7.28.2",
     "@biomejs/biome": "^2.2.2",
     "@iconify/json": "2.2.309",
     "@iconify/types": "2.0.0",
@@ -97,6 +100,7 @@
     "@types/react": "19.0.10",
     "@types/react-dom": "19.0.4",
     "boxen": "8.0.1",
+    "chokidar": "^4.0.3",
     "consola": "3.4.0",
     "gradient-string": "3.0.0",
     "json5": "2.2.3",
