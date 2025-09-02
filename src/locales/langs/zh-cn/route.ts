@@ -1,4 +1,5 @@
-const route: App.I18n.Schema['translation']['route'] = {
+// : App.I18n.Schema['translation']['route']
+export default {
   '(base)_about': '关于',
   '(base)_function': '系统功能',
   '(base)_function_event-bus': '事件总线演示',
@@ -17,6 +18,7 @@ const route: App.I18n.Schema['translation']['route'] = {
   '(base)_manage_role': '角色管理',
   '(base)_manage_role_[...slug]': '角色管理详情',
   '(base)_manage_user': '用户管理',
+  '(base)_manage_test': '测试页面',
   '(base)_manage_user_[id]': '用户详情',
   '(base)_multi-menu': '多级菜单',
   '(base)_multi-menu_first': '菜单一',
@@ -54,5 +56,3 @@ const route: App.I18n.Schema['translation']['route'] = {
   notFound: '页面不存在',
   root: '首页'
 };
-
-export default route;

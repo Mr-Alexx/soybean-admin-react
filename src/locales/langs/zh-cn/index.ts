@@ -1,11 +1,13 @@
 import common from './common';
+import component from './component';
 import form from './form';
 import page from './page';
 import route from './route';
 import theme from './theme';
 
-const local: App.I18n.Schema['translation'] = {
+export default {
   common,
+  component,
   datatable: {
     itemCount: '共 {{total}} 条'
   },
@@ -50,5 +52,3 @@ const local: App.I18n.Schema['translation'] = {
   },
   theme
 };
-
-export default local;

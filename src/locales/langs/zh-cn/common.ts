@@ -1,4 +1,4 @@
-const common: App.I18n.Schema['translation']['common'] = {
+export default {
   action: '操作',
   add: '新增',
   addSuccess: '添加成功',
@@ -43,5 +43,3 @@ const common: App.I18n.Schema['translation']['common'] = {
     yes: '是'
   }
 };
-
-export default common;

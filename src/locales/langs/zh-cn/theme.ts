@@ -1,4 +1,4 @@
-const theme: App.I18n.Schema['translation']['theme'] = {
+export default {
   colourWeakness: '色弱模式',
   configOperation: {
     copyConfig: '复制配置',
@@ -88,5 +88,3 @@ const theme: App.I18n.Schema['translation']['theme'] = {
     visible: '显示全屏水印'
   }
 };
-
-export default theme;

@@ -1,9 +1,10 @@
-const theme: App.I18n.Schema['translation']['theme'] = {
+export default {
   colourWeakness: 'Colour Weakness',
   configOperation: {
     copyConfig: 'Copy Config',
     copyFailedMsg: 'Copy Failed',
-    copySuccessMsg: 'Copy Success, Please replace the variable "themeSettings" in "src/theme/settings.ts"',
+    copySuccessMsg:
+      'Copy Success, Please replace the variable "themeSettings" in "src/theme/settings.ts"',
     resetConfig: 'Reset Config',
     resetSuccessMsg: 'Reset Success'
   },
@@ -88,5 +89,3 @@ const theme: App.I18n.Schema['translation']['theme'] = {
     visible: 'Watermark Full Screen Visible'
   }
 };
-
-export default theme;

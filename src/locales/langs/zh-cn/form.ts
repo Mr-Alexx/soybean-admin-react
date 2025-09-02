@@ -1,4 +1,4 @@
-const form: App.I18n.Schema['translation']['form'] = {
+export default {
   code: {
     invalid: '验证码格式不正确',
     required: '请输入验证码'
@@ -25,5 +25,3 @@ const form: App.I18n.Schema['translation']['form'] = {
     required: '请输入用户名'
   }
 };
-
-export default form;

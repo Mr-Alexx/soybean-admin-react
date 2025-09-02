@@ -1,4 +1,4 @@
-const route: App.I18n.Schema['translation']['route'] = {
+export default {
   '(base)_about': 'About',
   '(base)_function': 'System Function',
   '(base)_function_event-bus': 'Event Bus Demo',
@@ -17,6 +17,7 @@ const route: App.I18n.Schema['translation']['route'] = {
   '(base)_manage_role': 'Role Manage',
   '(base)_manage_role_[...slug]': 'Role Manage Details',
   '(base)_manage_user': 'User Manage',
+  '(base)_manage_test': 'Test',
   '(base)_manage_user_[id]': 'User Detail',
   '(base)_multi-menu': 'Multi Menu',
   '(base)_multi-menu_first': 'Menu One',
@@ -54,5 +55,3 @@ const route: App.I18n.Schema['translation']['route'] = {
   notFound: 'Page Not Found',
   root: 'Home'
 };
-
-export default route;

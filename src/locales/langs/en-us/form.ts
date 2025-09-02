@@ -1,4 +1,4 @@
-const form: App.I18n.Schema['translation']['form'] = {
+export default {
   code: {
     invalid: 'Verification code format is incorrect',
     required: 'Please enter verification code'
@@ -25,4 +25,3 @@ const form: App.I18n.Schema['translation']['form'] = {
     required: 'Please enter user name'
   }
 };
-export default form;

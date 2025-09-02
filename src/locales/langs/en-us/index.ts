@@ -1,12 +1,14 @@
 import common from './common';
+import component from './component';
 import form from './form';
 import page from './page';
 import request from './request';
 import route from './route';
 import theme from './theme';
 
-const local: App.I18n.Schema['translation'] = {
+export default {
   common,
+  component,
   datatable: {
     itemCount: 'Total {total} items'
   },
@@ -39,10 +41,9 @@ const local: App.I18n.Schema['translation'] = {
     title: 'SoybeanAdmin',
     updateCancel: 'Later',
     updateConfirm: 'Refresh immediately',
-    updateContent: 'A new version of the system has been detected. Do you want to refresh the page immediately?',
+    updateContent:
+      'A new version of the system has been detected. Do you want to refresh the page immediately?',
     updateTitle: 'System Version Update Notification'
   },
   theme
 };
-
-export default local;
