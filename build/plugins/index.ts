@@ -5,6 +5,7 @@ import removeConsole from 'vite-plugin-remove-console';
 import { setupAutoImport } from './auto-import';
 import { setupHtmlPlugin } from './html';
 import { setupProjectInfo } from './info';
+import { setupLangsTypeGen } from './langs-type-gen';
 import { setupElegantRouter } from './router';
 import { setupUnocss } from './unocss';
 import { setupUnPluginIcon } from './unplugin-icon';
@@ -15,6 +16,7 @@ export function setupVitePlugins(viteEnv: Env.ImportMeta, buildTime: string) {
     setupAutoImport(viteEnv),
     setupUnocss(viteEnv),
     ...setupUnPluginIcon(viteEnv),
+    setupLangsTypeGen(),
     Inspect(),
     removeConsole(),
     setupHtmlPlugin(buildTime),
